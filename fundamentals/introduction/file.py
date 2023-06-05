@@ -158,7 +158,7 @@ print_hello_x_or_ten_times(4)
 Bonus section
 """
 
-# print(num3)
+# print(num3) NameError: name <variable name> is not defined
 # num3 = 72
 # fruit[0] = 'cranberry'
 # print(person['favorite_team'])
