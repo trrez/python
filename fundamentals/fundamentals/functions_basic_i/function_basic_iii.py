@@ -50,13 +50,16 @@ estudiantes = [
 ]
 
 
-def iterateDictionary2(key_name, some_list):
-    for key_name in some_list:
-        print(key_name)
+def iterate_dictionary2(key_name, list):
+    for i in range(0, len(list)):
+
+        for key, val in list[i].items():
+            if key == key_name:
+                print(val)
 
 
-iterateDictionary2('name', estudiantes)
-iterateDictionary2('last_name', estudiantes)
+iterate_dictionary2('name', estudiantes)
+iterate_dictionary2('last_name', estudiantes)
 
 # Iterar a través de un diccionarios con valores de lista
 dojo = {
