@@ -6,9 +6,11 @@ class User:
 
     def hacer_deposito(self, amount):
         self.balance_cuenta += amount
+        return self
 
     def hacer_retiro(self, amount):
         self.balance_cuenta -= amount
+        return self
 
     def mostrar_balance_usuario(self):
         print(f"Usuario: {self.name}, Balance: {self.balance_cuenta}")
@@ -17,6 +19,7 @@ class User:
         self.other_user = other_user
         other_user.balance_cuenta += amount
         self.balance_cuenta -= amount
+        return self
 
 
 usr1 = User('Tatiana', 'tatiana@gmail.com')
@@ -25,19 +28,9 @@ usr3 = User('Medusa', 'medusa@gmail.com')
 usr1.mostrar_balance_usuario()
 usr2.mostrar_balance_usuario()
 usr3.mostrar_balance_usuario()
-usr1.hacer_deposito(200)
-usr1.hacer_deposito(100)
-usr1.hacer_deposito(300)
-usr1.hacer_retiro(300)
-usr2.hacer_deposito(100)
-usr2.hacer_deposito(100)
-usr2.hacer_retiro(300)
-usr2.hacer_retiro(600)
-usr3.hacer_deposito(700)
-usr3.hacer_retiro(300)
-usr3.hacer_retiro(600)
-usr3.hacer_retiro(600)
-usr1.transfer_dinero(usr3, 200)
-usr1.mostrar_balance_usuario()
-usr2.mostrar_balance_usuario()
-usr3.mostrar_balance_usuario()
+usr1.hacer_deposito(200).hacer_deposito(100).hacer_deposito(
+    300).hacer_retiro(300).transfer_dinero(usr3, 200).mostrar_balance_usuario()
+usr2.hacer_deposito(100).hacer_deposito(
+    100).hacer_retiro(300).hacer_retiro(600).mostrar_balance_usuario()
+usr3.hacer_deposito(700).hacer_retiro(300).hacer_retiro(
+    600).hacer_retiro(600).mostrar_balance_usuario()
